@@ -6,7 +6,6 @@ RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/so
   cron \
   ffmpeg \
   libreoffice-writer \
-  php-imagick \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/log/supervisord /var/run/supervisord && \ 

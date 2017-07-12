@@ -9,8 +9,7 @@ RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/so
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/log/supervisord /var/run/supervisord && \ 
-  echo "*/15 * * * * su - www-data -s /bin/bash -c \"php -f /var/www/html/cron.php\""| crontab - \
-  echo "*/20 * * * * su - www-data -s /bin/bash -c \"php -f /var/www/html/occ preview:pre-generate\""| crontab -
+  echo "*/15 * * * * su - www-data -s /bin/bash -c \"php -f /var/www/html/cron.php\""| crontab -
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 

@@ -3,6 +3,9 @@ FROM nextcloud:fpm
 RUN apt-get update && apt-get install -y \
   supervisor \
   cron \
+  ffmpeg \
+  libreoffice-writer \
+  php-imagick \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/log/supervisord /var/run/supervisord && \ 
